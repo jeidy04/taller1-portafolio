@@ -1,0 +1,108 @@
+/* ==========================================================
+   FASE 2: Estilizado base
+   Estructura de una regla CSS:  selector { propiedad: valor; }
+   ========================================================== */
+
+body {
+    margin: 0;                          /* Reset: quita el margen por defecto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* ==========================================================
+   FASE 3: Modelo de caja (Box Model)
+   Cada elemento es un rectángulo: content + padding + border + margin
+   ========================================================== */
+
+.contenedor {
+    width: 80%;
+    margin: 20px auto;                  /* Centrado horizontal */
+    background: white;
+    padding: 30px;                      /* Espacio interno */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================
+   FASE 4: Flexbox
+   display: flex coloca los hijos directos en una fila
+   ========================================================== */
+
+.habilidades {
+    display: flex;
+    justify-content: space-around;      /* Reparte el espacio entre los items */
+    list-style: none;                   /* Quita las viñetas */
+    padding: 0;
+}
+
+.habilidades li {
+    background: #ecf0f1;
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+/* ==========================================================
+   Extras: botón, enlaces y pie de página
+   ========================================================== */
+
+button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3d566e;
+}
+
+a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Foco visible para quien navega con teclado */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #e67e22;
+    outline-offset: 3px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* En pantallas pequeñas, las listas pasan a columna */
+@media (max-width: 600px) {
+    .contenedor {
+        width: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .habilidades {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
